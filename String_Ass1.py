@@ -1,3 +1,12 @@
+"""
+that no two adjacent characters are same.
+
+Input: aaabc 
+Output: abaca 
+
+Input: aaabb
+Output: ababa
+ """
 print("Enter any string: ")
 
 S=input()
@@ -9,10 +18,10 @@ for c, x in sorted((S.count(x), x) for x in set(S)):
     A.extend(c * x)
     print(A)
 res = [None] * slen 
-
+print(res)
 #split
 res[::2],res[1::2] = A[int(slen /2):], A[:int(slen /2)]
 
 #Join
-print("Rearranged string is")
+print("Possible arranged string is")
 print("".join(res))

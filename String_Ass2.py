@@ -50,10 +50,10 @@ for j in range(S_len):           #iterate through string
     nstr_len=len(nstr)
     for i in range(nstr_len): 
         if nstr[i] in "AEIOU":             #check for vowels
-            #print("\nVowels found!! it's ",p1_Name,"'s turn to play")
-            #print(p1_Name,"Created substring :")    #create strings with vowels
+            print("\nVowels found!! it's ",p1_Name,"'s turn to play")
+            print(p1_Name,"Created substring :")    #create strings with vowels
             print(nstr[:i+1])
         else:
-            #print("\nConstant found!! it's ",p2_Name,"'s turn to play")
-            #print(p2_Name,"Created substring :")    #create string with constants
+            print("\nConstant found!! it's ",p2_Name,"'s turn to play")
+            print(p2_Name,"Created substring :")    #create string with constants
             print(nstr[:i+1])      
