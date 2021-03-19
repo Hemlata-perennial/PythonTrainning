@@ -1,7 +1,7 @@
 import pickle
 
 def add_emp_record():
-    file = open("employee.dat","ab")
+    file = open("employee.dat","ab")    #open file to append in binary format
     emp = {}        #Dictionary with name emp is created
     #Reading input from user to enter into dict
     emp['empcode'] = int(input("Enter employee code: "))
