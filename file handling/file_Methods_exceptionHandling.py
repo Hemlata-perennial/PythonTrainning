@@ -1,3 +1,4 @@
+import pickle
 try:
     f = open('sample1.txt',mode='w+', encoding = 'utf-8')
 except:
@@ -11,17 +12,29 @@ else:
     #third line
     f.write('contains three lines\n')
 
-    data = f.read(19);
+    data = f.read(19)
     print('Read String is : ', data)
 
         #Check current position
-    position = f.tell();
+    position = f.tell()
     print('Current file position : ', position)
 
         #Reposition pointer at the beginning once again
-    position = f.seek(0, 0);
-    data = f.read(19);
+    position = f.seek(0, 0)
+    data = f.read(19)
     print('Again read String is : ', data)
+
+
+    #pickle
+    mylist = ['h', 'e', 'm', 'l']
+    with open('sample.txt', 'wb') as fh:
+        pickle.dump(mylist, fh)
+        fh.close()
+    pickle_off = open ("sample.txt", "rb")
+    data = pickle.load(pickle_off)
+    print(data)
+    
+
 finally:
    f.close()
 

@@ -5,7 +5,7 @@ class Absclass(ABC):
         print("Passed value: ", x)
     @abstractmethod
     def task(self):
-        print("We are inside Absclass task")
+        pass
  
 class test_class(Absclass):
     def task(self):
