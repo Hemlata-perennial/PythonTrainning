@@ -1,0 +1,46 @@
+<html>
+  <body>
+    <h1>Add book</h1>
+    <form method="POST" action="/">
+      <input type="text" name="book_Id" placeholder="Enter book Id">
+      <input type="text" name="title" placeholder="Enter book title">
+      <input type="submit" value="Add">
+    </form>
+
+    <h1>Books</h1>
+    <table>
+      <h3>
+      <tr>
+        <td>Id</td>
+        <td>Book Title</td>
+        <td>Edit Book Title</td>
+        <td>Delete Book</td>
+      </tr>
+    </h3>
+      {% for book in books %}
+        <tr>
+          <td>
+            {{book.book_Id}}
+          </td>
+
+          <td>
+            {{book.title}}
+          </td>
+          <td>
+            <form method="POST" action="./update" style="display: inline">
+              <input type="hidden" value="{{book.title}}" name="oldtitle">
+              <input type="text" value="{{book.title}}" name="newtitle">
+              <input type="submit" value="Update">
+            </form>
+          </td>
+          <td>
+            <form method="POST" action="./delete" style="display: inline">
+              <input type="hidden" value="{{book.title}}" name="title">
+              <input type="submit" value="Delete">
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
