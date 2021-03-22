@@ -1,0 +1,34 @@
+
+<html>
+    
+<head><title>Admin</title></head>
+
+<body>
+
+    
+<h1>Admin Home</h1>
+<div>
+    {% for account in accounts %}
+    <h3><p>Employee :{{ account['id'] }} </p>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>{{ account['fullname'] }}</td>
+        </tr>
+  <tr>
+            <td>Username:</td>
+            <td>{{ account['username'] }}</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>{{ account['password'] }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ account['email'] }}</td>
+        </tr>
+    </table>
+    {%endfor%}
+</div>
+</body>
+</html>
